@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: nginx-nodeport
+  labels:  # using labeles here 
+    app: nginx-nodeport
+    demo: service  
+  # namespace: roboshop
+spec:
+  containers:
+  - name: nginx-nodeport
+    image: nginx
+    ports: 
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Service 
+metadata: 
+  name: nginx-nodeport
+spec:
+  type: NodePort
+  selector: # this is used to attach the service to pod by using the labels we gave sam elabel as above the servie will attach to above pods 
+    app: nginx-nodeport
+    demo: service
+  ports:
+    - protocol: TCP
+      port: 80 #service port 
+      targetPort: 80 # container port 
