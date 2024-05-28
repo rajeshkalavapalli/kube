@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: nginx-pod
+  labels:  # using labeles here 
+    app: nginx
+    demo: servide  
+  # namespace: roboshop
+spec:
+  containers:
+  - name: nginx-pod
+    image: nginx
+    ports: 
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: nginx-service
+spec:
+  selector: # this is used to attach the service to pod by using the labels we gave sam elabel as above the servie will attach to above pods 
+    app: nginx
+    demo: servide 
+  ports:
+    - protocol: TCP
+      port: 80 #service port 
+      targetPort: 9376 # container port 
