@@ -20,3 +20,4 @@ spec:
         configMapKeyRef:
           name: devops-config # where to take 
           key: learner  # what is the key 
+          
