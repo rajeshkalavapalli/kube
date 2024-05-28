@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devops-config
+data:
+  name: kube-practice 
+  learner: Rajesh 
