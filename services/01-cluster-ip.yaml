@@ -14,7 +14,7 @@ spec:
     - containerPort: 80
 ---
 apiVersion: v1
-kind: Pod 
+kind: service 
 metadata: 
   name: nginx-service
 spec:
@@ -25,3 +25,4 @@ spec:
     - protocol: TCP
       port: 80 #service port 
       targetPort: 80 # container port 
+
