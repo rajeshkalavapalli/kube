@@ -18,7 +18,7 @@ kind: Service
 metadata: 
   name: nginx-lb
 spec:
-  type: loadBalancer
+  type: LoadBalancer
   selector: # this is used to attach the service to pod by using the labels we gave sam elabel as above the servie will attach to above pods 
     app: nginx-lb
     demo: service
@@ -26,4 +26,3 @@ spec:
     - protocol: TCP
       port: 80 #service port 
       targetPort: 80 # container port
-      
