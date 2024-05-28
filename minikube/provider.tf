@@ -8,7 +8,7 @@ terraform {
 
     backend "s3" {
     bucket = "vpc-p"
-    key    = "mcube"
+    key    = "cube"
     region = "us-east-1"
     dynamodb_table = "new_t"
   }
